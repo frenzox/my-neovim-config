@@ -17,7 +17,16 @@ lsp.set_preferences({
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', { settings = { Lua = {
             diagnostics = {
-                globals = { 'vim' }
+                globals = {
+                    '_G',
+                    'assert',
+                    'string',
+                    'table',
+                    'tonumber',
+                    'type',
+                    'unpack',
+                    'vim',
+                }
             }
         }
     }
@@ -115,5 +124,5 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false
 })
