@@ -1,13 +1,9 @@
 local uconv = require('nvim-uconv')
 uconv.setup({
-    decimal_places = 2,
+    format = "%g",
 })
 
-local opts = {
-    noremap = true,
-    silent = false,
-    expr = true
-}
+local opts = {}
 
 vim.keymap.set({'n', 'v'}, '<leader>tr', uconv.angle.degrees_to_radians, opts)
 vim.keymap.set({'n', 'v'}, '<leader>td', uconv.angle.radians_to_degrees, opts)
