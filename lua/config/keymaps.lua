@@ -4,16 +4,25 @@
 local uconv = require("nvim-uconv")
 local opts = { noremap = true, silent = true }
 
+vim.keymap.del("n", "gw")
+vim.keymap.del("x", "gw")
+
+vim.keymap.del("n", "<leader>qq")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+
 vim.keymap.set("n", "<A-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<A-j>", ":wincmd j<CR>", opts)
 vim.keymap.set("n", "<A-k>", ":wincmd k<CR>", opts)
 vim.keymap.set("n", "<A-l>", ":wincmd l<CR>", opts)
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+
 vim.keymap.set("n", "<F1>", ":BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<F2>", ":BufferLineCyclePrev<CR>", opts)
+
 vim.keymap.set("n", "<F4>", ":%s/\\s\\+$//e<CR>", opts)
 vim.keymap.set("n", "<esc>", ":noh<CR>", opts)
 vim.keymap.set("x", "<leader>p", '"_dP', opts)
