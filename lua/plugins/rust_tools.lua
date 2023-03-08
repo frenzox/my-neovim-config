@@ -6,15 +6,16 @@ return {
         local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
         local opts = {
-            -- ... other configs
             dap = {
                 adapter = require("rust-tools.dap").get_codelldb_adapter(
                     codelldb_path,
                     liblldb_path
                 ),
             },
+            server = {
+                cmd = { "/home/guilherme/.cargo/bin/ra-multiplex" },
+            },
         }
-
         require("rust-tools").setup(opts)
     end,
 }

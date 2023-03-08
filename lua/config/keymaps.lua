@@ -6,6 +6,8 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.del("n", "gw")
 vim.keymap.del("x", "gw")
+vim.keymap.del("n", "f")
+vim.keymap.del("n", "F")
 
 vim.keymap.del("n", "<leader>qq")
 
