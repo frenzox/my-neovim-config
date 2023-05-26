@@ -1,27 +1,16 @@
 return {
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "dracula",
-        },
-    },
-
-    {
-        "saecki/crates.nvim",
-        dependencies = {
-            { "nvim-lua/plenary.nvim" },
-        },
-    },
-
+    { "LazyVim/LazyVim", opts = { colorscheme = "dracula" } },
     { "Mofiqul/dracula.nvim" },
     { "github/copilot.vim" },
-    { "rmagatti/auto-session" },
+    { "nvim-telescope/telescope-dap.nvim" },
+    { "saecki/crates.nvim", dependencies = { { "nvim-lua/plenary.nvim" } } },
     { "stevearc/dressing.nvim" },
+    { "theHamsta/nvim-dap-virtual-text" },
     { "tpope/vim-abolish" },
     { "tpope/vim-commentary" },
     { "tpope/vim-endwise" },
     { "tpope/vim-fugitive" },
     { "tpope/vim-repeat" },
     { "tpope/vim-speeddating" },
-    { "tpope/vim-surround" },
+    { "triglav/vim-visual-increment" },
 }

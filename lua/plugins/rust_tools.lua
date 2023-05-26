@@ -1,7 +1,7 @@
 return {
     "simrat39/rust-tools.nvim",
     config = function()
-        local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1"
+        local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
         local codelldb_path = extension_path .. "adapter/codelldb"
         local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
@@ -13,7 +13,16 @@ return {
                 ),
             },
             server = {
-                cmd = { "/home/guilherme/.cargo/bin/ra-multiplex" },
+                settings = {
+                    ["rust-analyzer"] = {
+                        procMacro = {
+                            enabled = true,
+                        },
+                        diagnostics = {
+                            disabled = { "unresolved-proc-macro" },
+                        },
+                    },
+                },
             },
         }
         require("rust-tools").setup(opts)

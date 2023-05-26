@@ -1,9 +1,9 @@
 return {
     {
-        "frenzox/nvim-uconv",
+        dir = "~/workspace/nvim-uconv",
         module = true,
         opts = {
-            format = "%g",
+            format = "%.4f",
         },
     },
 }

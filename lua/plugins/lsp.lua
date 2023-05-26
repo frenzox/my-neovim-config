@@ -22,40 +22,52 @@ return {
         "neovim/nvim-lspconfig",
         opts = {
             setup = {
-                pylsp = function(_, opts)
-                    require("lspconfig").pylsp.setup({
-                        server = opts,
-                        cmd = { vim.env.HOME .. "/.local/share/nvim/mason/bin/pylsp" },
-                        cmd_env = {
-                            PYTHONPATH = vim.fn.glob(
-                                util.path.join(
-                                    get_venv_python(vim.fn.getcwd()),
-                                    "lib/python*/site-packages/"
-                                )
-                            ),
-                        },
+                -- pylsp = function(_, opts)
+                --     require("lspconfig").pylsp.setup({
+                --         server = opts,
+                --         cmd = { vim.env.HOME .. "/.local/share/nvim/mason/bin/pylsp" },
+                --         cmd_env = {
+                --             PYTHONPATH = vim.fn.glob(
+                --                 util.path.join(
+                --                     get_venv_python(vim.fn.getcwd()),
+                --                     "lib/python*/site-packages/"
+                --                 )
+                --             ),
+                --         },
+                --     })
+                --     return true
+                -- end,
+                pyright = function(_, opts)
+                    local capabilities = vim.lsp.protocol.make_client_capabilities()
+                    capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+
+                    require("lspconfig").pyright.setup({
+                        capabilities = capabilities,
                     })
                     return true
                 end,
             },
             servers = {
-                pylsp = {
-                    settings = {
-                        pylsp = {
-                            plugins = {
-                                flake8 = {
-                                    enabled = true,
-                                    config = ".flake8",
-                                },
-                                pylsp_mypy = {
-                                    enabled = true,
-                                    report_progress = true,
-                                    ignore_missing_imports = true,
-                                },
-                            },
-                        },
-                    },
-                },
+                -- pylsp = {
+                --     settings = {
+                --         pylsp = {
+                --             plugins = {
+                --                 flake8 = {
+                --                     enabled = true,
+                --                     config = ".flake8",
+                --                 },
+                --                 pylsp_mypy = {
+                --                     enabled = false,
+                --                     report_progress = true,
+                --                     ignore_missing_imports = true,
+                --                 },
+                --                 pycodestyle = {
+                --                     enabled = false,
+                --                 },
+                --             },
+                --         },
+                --     },
+                -- },
             },
         },
     },
