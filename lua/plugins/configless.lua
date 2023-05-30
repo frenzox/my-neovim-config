@@ -1,6 +1,6 @@
 return {
-    { "LazyVim/LazyVim", opts = { colorscheme = "dracula" } },
-    { "Mofiqul/dracula.nvim" },
+    { "LazyVim/LazyVim", opts = { colorscheme = "tokyonight-storm" } },
+    -- { "maxmx03/dracula.nvim" },
     { "github/copilot.vim" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "saecki/crates.nvim", dependencies = { { "nvim-lua/plenary.nvim" } } },
