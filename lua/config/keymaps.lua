@@ -5,8 +5,8 @@ local uconv = require("nvim-uconv")
 local opts = { noremap = true, silent = true }
 
 -- gw is by default used for text reflow. LazyVim overwrites it which I don't like, thus I'm removing it.
-vim.keymap.del("n", "gw")
-vim.keymap.del("x", "gw")
+-- vim.keymap.del("n", "gw")
+-- vim.keymap.del("x", "gw")
 
 vim.keymap.del("n", "<leader>qq")
 

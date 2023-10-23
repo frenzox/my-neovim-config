@@ -1,9 +1,10 @@
-local util = require("lspconfig.util")
-
 return {
     {
         "neovim/nvim-lspconfig",
         opts = {
+            servers = {
+                rust_analyzer = {},
+            },
             setup = {
                 pyright = function(_, _)
                     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -12,6 +13,7 @@ return {
                     require("lspconfig").pyright.setup({
                         capabilities = capabilities,
                     })
+
                     return true
                 end,
             },

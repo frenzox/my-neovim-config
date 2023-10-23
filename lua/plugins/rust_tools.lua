@@ -13,6 +13,7 @@ return {
                 ),
             },
             server = {
+                cmd = { "ra-multiplex" },
                 settings = {
                     ["rust-analyzer"] = {
                         procMacro = {
@@ -30,6 +31,7 @@ return {
                 },
             },
         }
+
         require("rust-tools").setup(opts)
     end,
 }
