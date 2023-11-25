@@ -16,18 +16,32 @@ return {
                 cmd = { "ra-multiplex" },
                 settings = {
                     ["rust-analyzer"] = {
+                        check = {
+                            overrideCommand = {
+                                "cargo",
+                                "clippy",
+                                "--message-format=json-diagnostic-rendered-ansi",
+                                "--fix",
+                                "--allow-dirty",
+                            },
+                        },
                         procMacro = {
                             enabled = true,
                         },
                         diagnostics = {
                             disabled = { "unresolved-proc-macro" },
                         },
+                        semanticHighlighting = {
+                            punctuation = {
+                                enable = true,
+                            },
+                        },
                     },
                 },
             },
             tools = {
                 inlay_hints = {
-                    auto = false,
+                    enabled = false,
                 },
             },
         }

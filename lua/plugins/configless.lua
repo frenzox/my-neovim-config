@@ -1,6 +1,6 @@
 return {
     { "LazyVim/LazyVim", opts = { colorscheme = "dracula" } },
-    { "maxmx03/dracula.nvim" },
+    { "frenzox/dracula.nvim" },
     { "github/copilot.vim" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "saecki/crates.nvim", dependencies = { { "nvim-lua/plenary.nvim" } } },

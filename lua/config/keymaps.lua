@@ -27,6 +27,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 -- Keymaps for moving between buffers
 vim.keymap.set("n", "<F1>", ":BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<F2>", ":BufferLineCyclePrev<CR>", opts)
+vim.keymap.set("n", "<F8>", ":Inspect<CR>", opts)
 
 -- Remove trailling spaces
 vim.keymap.set("n", "<F4>", ":%s/\\s\\+$//e<CR>", opts)
