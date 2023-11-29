@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local uconv = require("nvim-uconv")
+local nvim_tmux_nav = require("nvim-tmux-navigation")
 local opts = { noremap = true, silent = true }
 
 -- gw is by default used for text reflow. LazyVim overwrites it which I don't like, thus I'm removing it.
@@ -9,6 +10,10 @@ local opts = { noremap = true, silent = true }
 -- vim.keymap.del("x", "gw")
 
 vim.keymap.del("n", "<leader>qq")
+vim.keymap.del("n", "<C-h>")
+vim.keymap.del("n", "<C-j>")
+vim.keymap.del("n", "<C-k>")
+vim.keymap.del("n", "<C-l>")
 
 -- In visual mode, allow moving the selected block up and down through text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
@@ -47,3 +52,10 @@ vim.keymap.set({ "n", "v" }, "<leader>tr", uconv.angle.degrees_to_radians, {})
 vim.keymap.set({ "n", "v" }, "<leader>td", uconv.angle.radians_to_degrees, {})
 vim.keymap.set({ "n", "v" }, "<leader>fm", uconv.prefix.from_milli, {})
 vim.keymap.set({ "n", "v" }, "<leader>tm", uconv.prefix.to_milli, {})
+
+vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
